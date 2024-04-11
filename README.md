@@ -311,6 +311,7 @@ All changes are toggleable via config files.
     * **Ingredient Matching:** Changes item matching code to CraftTweaker's ingredient matching system, fixes item NBT issues
 * **Mekanism**
     * **Duplication Fixes:** Fixes various duplication exploits
+    * **Fluid Renderer Index:** Fixes the Fluid Renderer stage index occasionally generating an ArrayIndexOutOfBoundsException
 * **Mob Stages**
     * **Spawning Rules Fixes:** Fixes mob replacement ignoring entity spawning rules
 * **Modular Routers**

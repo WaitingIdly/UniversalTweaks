@@ -546,6 +546,11 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Fluid Renderer Index")
+        @Config.Comment("Fixes the Fluid Renderer stage index occasionally generating an ArrayIndexOutOfBoundsException")
+        public boolean utFixFluidRenderIndex = true;
     }
 
     public static class MobStagesCategory
