@@ -12,7 +12,7 @@ public class UTWispParticlesMixin
     @ModifyConstant(method = "onDeath", constant = @Constant(floatValue = 1.0F))
     public float utWispParticles(float constant)
     {
-        if (UTConfigMods.THAUMCRAFT_ENTITIES.utTCWispParticlesToggle) return 10;
+        if (UTConfigMods.THAUMCRAFT.THAUMCRAFT_ENTITIES.utTCWispParticlesToggle) return 10;
         else return constant;
     }
 }

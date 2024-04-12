@@ -34,7 +34,7 @@ public abstract class UTFocusMineEntityMixin extends EntityThrowable
     @Inject(method = "onUpdate", at = @At(value = "HEAD"))
     public void utUpdateSounds(CallbackInfo ci)
     {
-        if (!UTConfigMods.THAUMCRAFT_FOCI.FOCUS_MEDIUMS.utTCMineMediumSoundToggle) return;
+        if (!UTConfigMods.THAUMCRAFT.THAUMCRAFT_FOCI.FOCUS_MEDIUMS.utTCMineMediumSoundToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMediumMineFocus ::: On update");
         try
         {
@@ -57,7 +57,7 @@ public abstract class UTFocusMineEntityMixin extends EntityThrowable
     @Inject(method = "onImpact", at = @At(value = "HEAD"))
     protected void utImpactSound(final RayTraceResult mop, CallbackInfo ci)
     {
-        if (!UTConfigMods.THAUMCRAFT_FOCI.FOCUS_MEDIUMS.utTCMineMediumSoundToggle) return;
+        if (!UTConfigMods.THAUMCRAFT.THAUMCRAFT_FOCI.FOCUS_MEDIUMS.utTCMineMediumSoundToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMediumMineFocus ::: On impact");
         try
         {

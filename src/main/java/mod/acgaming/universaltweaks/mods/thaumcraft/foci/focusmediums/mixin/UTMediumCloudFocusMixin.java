@@ -21,7 +21,7 @@ public abstract class UTMediumCloudFocusMixin extends FocusMedium
     @Inject(method = "execute", at = @At(value = "RETURN"), remap = false)
     public void utMediumCloudFocusSound(Trajectory trajectory, CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfigMods.THAUMCRAFT_FOCI.FOCUS_MEDIUMS.utTCCloudMediumSoundToggle) return;
+        if (!UTConfigMods.THAUMCRAFT.THAUMCRAFT_FOCI.FOCUS_MEDIUMS.utTCCloudMediumSoundToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMediumCloudFocus ::: Execute");
         try
         {

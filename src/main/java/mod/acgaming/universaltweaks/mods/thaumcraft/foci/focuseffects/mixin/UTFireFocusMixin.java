@@ -22,7 +22,7 @@ public abstract class UTFireFocusMixin extends FocusEffect
     @Inject(method = "execute", at = @At(value = "RETURN"), remap = false)
     public void utFireFocusImpactSound(RayTraceResult target, Trajectory trajectory, float finalPower, int num, CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfigMods.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCFireFocusImpactSoundToggle) return;
+        if (!UTConfigMods.THAUMCRAFT.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCFireFocusImpactSoundToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEffectFireFocus ::: Execute");
         try
         {

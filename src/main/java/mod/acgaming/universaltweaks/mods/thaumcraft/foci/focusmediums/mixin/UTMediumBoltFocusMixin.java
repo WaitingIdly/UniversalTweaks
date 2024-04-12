@@ -21,7 +21,7 @@ public abstract class UTMediumBoltFocusMixin extends FocusMediumTouch
     @Inject(method = "execute", at = @At(value = "RETURN"), remap = false)
     public void utMediumBoltFocusSound(Trajectory trajectory, CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfigMods.THAUMCRAFT_FOCI.FOCUS_MEDIUMS.utTCBoltMediumSoundToggle) return;
+        if (!UTConfigMods.THAUMCRAFT.THAUMCRAFT_FOCI.FOCUS_MEDIUMS.utTCBoltMediumSoundToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMediumBoltFocus ::: Execute");
         try
         {

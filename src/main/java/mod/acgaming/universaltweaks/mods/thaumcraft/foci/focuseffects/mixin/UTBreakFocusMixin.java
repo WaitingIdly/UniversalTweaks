@@ -26,7 +26,7 @@ public abstract class UTBreakFocusMixin extends FocusEffect
     {
         try
         {
-            if (UTConfigMods.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCBreakFocusSoundRevampToggle) caster.world.playSound(null, caster.getPosition().up(), SoundsTC.rumble, SoundCategory.PLAYERS, 0.6F, 3.0F + (float) (caster.world.rand.nextGaussian() * 0.05F));
+            if (UTConfigMods.THAUMCRAFT.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCBreakFocusSoundRevampToggle) caster.world.playSound(null, caster.getPosition().up(), SoundsTC.rumble, SoundCategory.PLAYERS, 0.6F, 3.0F + (float) (caster.world.rand.nextGaussian() * 0.05F));
             else caster.world.playSound(null, caster.getPosition().up(), SoundEvents.BLOCK_END_GATEWAY_SPAWN, SoundCategory.PLAYERS, 0.1F, 2.0F + (float) (caster.world.rand.nextGaussian() * 0.05F));
         }
         catch (Exception ignored) {}
@@ -35,7 +35,7 @@ public abstract class UTBreakFocusMixin extends FocusEffect
     @Inject(method = "execute", at = @At(value = "RETURN"), remap = false)
     public void utBreakFocusImpactSound(RayTraceResult target, Trajectory trajectory, float finalPower, int num, CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfigMods.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCBreakFocusImpactSoundToggle) return;
+        if (!UTConfigMods.THAUMCRAFT.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCBreakFocusImpactSoundToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEffectBreakFocus ::: Execute");
         try
         {

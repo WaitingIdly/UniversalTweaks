@@ -26,7 +26,7 @@ public abstract class UTRiftFocusMixin extends FocusEffect
     {
         try
         {
-            if (UTConfigMods.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCRiftFocusSoundRevampToggle) caster.world.playSound(null, caster.getPosition().up(), SoundsTC.craftstart, SoundCategory.PLAYERS, 0.65F, 1.4F + (float) (caster.world.rand.nextGaussian() * 0.1F));
+            if (UTConfigMods.THAUMCRAFT.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCRiftFocusSoundRevampToggle) caster.world.playSound(null, caster.getPosition().up(), SoundsTC.craftstart, SoundCategory.PLAYERS, 0.65F, 1.4F + (float) (caster.world.rand.nextGaussian() * 0.1F));
             else caster.world.playSound(null, caster.getPosition().up(), SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE, SoundCategory.PLAYERS, 0.2F, 0.7F);
         }
         catch (Exception ignored) {}
@@ -35,7 +35,7 @@ public abstract class UTRiftFocusMixin extends FocusEffect
     @Inject(method = "execute", at = @At(value = "RETURN"), remap = false)
     public void utRiftFocusImpactSound(RayTraceResult target, Trajectory trajectory, float finalPower, int num, CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfigMods.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCRiftFocusImpactSoundToggle) return;
+        if (!UTConfigMods.THAUMCRAFT.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCRiftFocusImpactSoundToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEffectRiftFocus ::: Execute");
         try
         {

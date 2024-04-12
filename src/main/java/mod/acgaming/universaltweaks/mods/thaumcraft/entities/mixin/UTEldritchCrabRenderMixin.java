@@ -21,7 +21,7 @@ public abstract class UTEldritchCrabRenderMixin extends RenderLiving<EntityEldri
     @Override
     public float getDeathMaxRotation(EntityEldritchCrab entity)
     {
-        if (UTConfigMods.THAUMCRAFT_ENTITIES.utTCSpiderlikeEldritchCrabToggle) return 180.0F;
+        if (UTConfigMods.THAUMCRAFT.THAUMCRAFT_ENTITIES.utTCSpiderlikeEldritchCrabToggle) return 180.0F;
         else return 90.0F;
     }
 }

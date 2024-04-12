@@ -21,7 +21,7 @@ public abstract class UTMediumSpellBatFocusMixin extends FocusMedium
     @Inject(method = "execute", at = @At(value = "RETURN"), remap = false)
     public void utMediumSpellBatFocusSound(Trajectory trajectory, CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfigMods.THAUMCRAFT_FOCI.FOCUS_MEDIUMS.utTCSpellBatMediumSoundToggle) return;
+        if (!UTConfigMods.THAUMCRAFT.THAUMCRAFT_FOCI.FOCUS_MEDIUMS.utTCSpellBatMediumSoundToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMediumSpellBatFocus ::: Execute");
         try
         {

@@ -21,7 +21,7 @@ public abstract class UTMediumMineFocusMixin extends FocusMedium
     @Inject(method = "execute", at = @At(value = "RETURN"), remap = false)
     public void utMediumMineFocusSound(Trajectory trajectory, CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfigMods.THAUMCRAFT_FOCI.FOCUS_MEDIUMS.utTCMineMediumSoundToggle) return;
+        if (!UTConfigMods.THAUMCRAFT.THAUMCRAFT_FOCI.FOCUS_MEDIUMS.utTCMineMediumSoundToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTMediumMineFocus ::: Execute");
         try
         {

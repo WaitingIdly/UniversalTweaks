@@ -26,7 +26,7 @@ public abstract class UTHealFocusMixin extends FocusEffect
     {
         try
         {
-            if (UTConfigMods.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCHealFocusSoundRevampToggle) caster.world.playSound(null, caster.getPosition().up(), SoundsTC.wand, SoundCategory.PLAYERS, 0.825F, 3.0F + (float) (caster.world.rand.nextGaussian() * 0.05F));
+            if (UTConfigMods.THAUMCRAFT.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCHealFocusSoundRevampToggle) caster.world.playSound(null, caster.getPosition().up(), SoundsTC.wand, SoundCategory.PLAYERS, 0.825F, 3.0F + (float) (caster.world.rand.nextGaussian() * 0.05F));
             else caster.world.playSound(null, caster.getPosition().up(), SoundEvents.BLOCK_CHORUS_FLOWER_GROW, SoundCategory.PLAYERS, 2.0F, 2.0F + (float) (caster.world.rand.nextGaussian() * 0.1F));
         }
         catch (Exception ignored) {}
@@ -35,7 +35,7 @@ public abstract class UTHealFocusMixin extends FocusEffect
     @Inject(method = "execute", at = @At(value = "RETURN"), remap = false)
     public void utHealFocusImpactSound(RayTraceResult target, Trajectory trajectory, float finalPower, int num, CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfigMods.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCHealFocusImpactSoundToggle) return;
+        if (!UTConfigMods.THAUMCRAFT.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCHealFocusImpactSoundToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEffectHealFocus ::: Execute");
         try
         {

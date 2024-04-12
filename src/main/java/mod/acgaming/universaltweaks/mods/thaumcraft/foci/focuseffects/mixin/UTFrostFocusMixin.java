@@ -26,7 +26,7 @@ public abstract class UTFrostFocusMixin extends FocusEffect
     {
         try
         {
-            if (UTConfigMods.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCFrostFocusSoundRevampToggle) caster.world.playSound(null, caster.getPosition().up(), SoundsTC.ice, SoundCategory.PLAYERS, 0.6F, 1.0F + (float) (caster.world.rand.nextGaussian() * 0.05F));
+            if (UTConfigMods.THAUMCRAFT.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCFrostFocusSoundRevampToggle) caster.world.playSound(null, caster.getPosition().up(), SoundsTC.ice, SoundCategory.PLAYERS, 0.6F, 1.0F + (float) (caster.world.rand.nextGaussian() * 0.05F));
             else caster.world.playSound(null, caster.getPosition().up(), SoundEvents.ENTITY_ZOMBIE_VILLAGER_CURE, SoundCategory.PLAYERS, 0.2F, 1.0F + (float) (caster.world.rand.nextGaussian() * 0.05F));
         }
         catch (Exception ignored) {}
@@ -35,7 +35,7 @@ public abstract class UTFrostFocusMixin extends FocusEffect
     @Inject(method = "execute", at = @At(value = "RETURN"), remap = false)
     public void utFrostFocusImpactSound(RayTraceResult target, Trajectory trajectory, float finalPower, int num, CallbackInfoReturnable<Boolean> cir)
     {
-        if (!UTConfigMods.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCFrostFocusImpactSoundToggle) return;
+        if (!UTConfigMods.THAUMCRAFT.THAUMCRAFT_FOCI.FOCUS_EFFECTS.utTCFrostFocusImpactSoundToggle) return;
         if (UTConfigGeneral.DEBUG.utDebugToggle) UniversalTweaks.LOGGER.debug("UTEffectFrostFocus ::: Execute");
         try
         {

@@ -22,7 +22,7 @@ public class UTFirebatParticlesMixin extends EntityMob
     @Inject(method = "onLivingUpdate", at = @At(value = "HEAD"))
     public void utFirebatParticles(CallbackInfo ci)
     {
-        if (!UTConfigMods.THAUMCRAFT_ENTITIES.utTCFirebatParticlesToggle) return;
+        if (!UTConfigMods.THAUMCRAFT.THAUMCRAFT_ENTITIES.utTCFirebatParticlesToggle) return;
         if (this.world.isRemote)
         {
             this.world.spawnParticle(EnumParticleTypes.SMOKE_NORMAL, this.prevPosX + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F, this.prevPosY + this.height / 2 + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F, this.prevPosZ + (this.world.rand.nextFloat() - this.world.rand.nextFloat()) * 0.2F, 0, 0, 0);

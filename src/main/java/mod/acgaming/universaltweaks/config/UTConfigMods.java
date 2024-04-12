@@ -191,14 +191,6 @@ public class UTConfigMods
     @Config.Name("Thaumcraft")
     public static final ThaumcraftCategory THAUMCRAFT = new ThaumcraftCategory();
 
-    @Config.LangKey("cfg.universaltweaks.modintegration.tc.entities")
-    @Config.Name("Thaumcraft: Entities")
-    public static final ThaumcraftEntitiesCategory THAUMCRAFT_ENTITIES = new ThaumcraftEntitiesCategory();
-
-    @Config.LangKey("cfg.universaltweaks.modintegration.tc.foci")
-    @Config.Name("Thaumcraft: Foci")
-    public static final ThaumcraftFociCategory THAUMCRAFT_FOCI = new ThaumcraftFociCategory();
-
     @Config.LangKey("cfg.universaltweaks.modintegration.thaumicwonders")
     @Config.Name("Thaumic Wonders")
     public static final ThaumicWondersCategory THAUMIC_WONDERS = new ThaumicWondersCategory();
@@ -718,97 +710,105 @@ public class UTConfigMods
         @Config.Name("Duplication Fixes")
         @Config.Comment("Fixes various duplication exploits")
         public boolean utDuplicationFixesToggle = true;
-    }
 
-    public static class ThaumcraftEntitiesCategory
-    {
-        @Config.RequiresMcRestart
-        @Config.Name("Firebat Particles")
-        @Config.Comment("Adds particles to firebats similar to legacy versions")
-        public boolean utTCFirebatParticlesToggle = true;
+        @Config.LangKey("cfg.universaltweaks.modintegration.tc.entities")
+        @Config.Name("Thaumcraft: Entities")
+        public final ThaumcraftEntitiesCategory THAUMCRAFT_ENTITIES = new ThaumcraftEntitiesCategory();
 
-        @Config.RequiresMcRestart
-        @Config.Name("Spiderlike Eldritch Crabs")
-        @Config.Comment("Rotates dead eldritch crabs all the way like endermites, silverfish, and spiders")
-        public boolean utTCSpiderlikeEldritchCrabToggle = true;
+        @Config.LangKey("cfg.universaltweaks.modintegration.tc.foci")
+        @Config.Name("Thaumcraft: Foci")
+        public final ThaumcraftFociCategory THAUMCRAFT_FOCI = new ThaumcraftFociCategory();
 
-        @Config.RequiresMcRestart
-        @Config.Name("Wisp Particles")
-        @Config.Comment("Increases particle size of wisps similar to legacy versions")
-        public boolean utTCWispParticlesToggle = true;
-    }
-
-    public static class ThaumcraftFociCategory
-    {
-        @Config.LangKey("cfg.universaltweaks.modintegration.tc.foci.focuseffects")
-        @Config.Name("Focus Effects")
-        public final FocusEffectsCategory FOCUS_EFFECTS = new FocusEffectsCategory();
-
-        @Config.LangKey("cfg.universaltweaks.modintegration.tc.foci.focusmediums")
-        @Config.Name("Focus Mediums")
-        public final FocusMediumsCategory FOCUS_MEDIUMS = new FocusMediumsCategory();
-
-        public static class FocusEffectsCategory
+        public static class ThaumcraftEntitiesCategory
         {
             @Config.RequiresMcRestart
-            @Config.Name("[01] Break: Cast Sound Revamp")
-            @Config.Comment("Overhauls the break focus effect cast sound")
-            public boolean utTCBreakFocusSoundRevampToggle = true;
+            @Config.Name("Firebat Particles")
+            @Config.Comment("Adds particles to firebats similar to legacy versions")
+            public boolean utTCFirebatParticlesToggle = true;
 
             @Config.RequiresMcRestart
-            @Config.Name("[02] Break: Impact Sound")
-            @Config.Comment("Adds an impact sound to the break focus effect")
-            public boolean utTCBreakFocusImpactSoundToggle = true;
+            @Config.Name("Spiderlike Eldritch Crabs")
+            @Config.Comment("Rotates dead eldritch crabs all the way like endermites, silverfish, and spiders")
+            public boolean utTCSpiderlikeEldritchCrabToggle = true;
 
             @Config.RequiresMcRestart
-            @Config.Name("[03] Earth: Cast Sound Revamp")
-            @Config.Comment("Overhauls the earth focus effect cast sound")
-            public boolean utTCEarthFocusSoundRevampToggle = true;
+            @Config.Name("Wisp Particles")
+            @Config.Comment("Increases particle size of wisps similar to legacy versions")
+            public boolean utTCWispParticlesToggle = true;
+        }
 
-            @Config.RequiresMcRestart
-            @Config.Name("[04] Earth: Impact Sound")
-            @Config.Comment("Adds an impact sound to the earth focus effect")
-            public boolean utTCEarthFocusImpactSoundToggle = true;
+        public static class ThaumcraftFociCategory
+        {
+            @Config.LangKey("cfg.universaltweaks.modintegration.tc.foci.focuseffects")
+            @Config.Name("Focus Effects")
+            public final FocusEffectsCategory FOCUS_EFFECTS = new FocusEffectsCategory();
 
-            @Config.RequiresMcRestart
-            @Config.Name("[05] Fire: Impact Sound")
-            @Config.Comment("Adds an impact sound to the fire focus effect")
-            public boolean utTCFireFocusImpactSoundToggle = true;
+            @Config.LangKey("cfg.universaltweaks.modintegration.tc.foci.focusmediums")
+            @Config.Name("Focus Mediums")
+            public final FocusMediumsCategory FOCUS_MEDIUMS = new FocusMediumsCategory();
 
-            @Config.RequiresMcRestart
-            @Config.Name("[06] Flux: Impact Sound")
-            @Config.Comment("Adds an impact sound to the flux focus effect")
-            public boolean utTCFluxFocusImpactSoundToggle = true;
+            public static class FocusEffectsCategory
+            {
+                @Config.RequiresMcRestart
+                @Config.Name("[01] Break: Cast Sound Revamp")
+                @Config.Comment("Overhauls the break focus effect cast sound")
+                public boolean utTCBreakFocusSoundRevampToggle = true;
 
-            @Config.RequiresMcRestart
-            @Config.Name("[07] Frost: Cast Sound Revamp")
-            @Config.Comment("Overhauls the frost focus effect cast sound to make it a lot less plangent")
-            public boolean utTCFrostFocusSoundRevampToggle = true;
+                @Config.RequiresMcRestart
+                @Config.Name("[02] Break: Impact Sound")
+                @Config.Comment("Adds an impact sound to the break focus effect")
+                public boolean utTCBreakFocusImpactSoundToggle = true;
 
-            @Config.RequiresMcRestart
-            @Config.Name("[08] Frost: Impact Sound")
-            @Config.Comment("Adds an impact sound to the frost focus effect")
-            public boolean utTCFrostFocusImpactSoundToggle = true;
+                @Config.RequiresMcRestart
+                @Config.Name("[03] Earth: Cast Sound Revamp")
+                @Config.Comment("Overhauls the earth focus effect cast sound")
+                public boolean utTCEarthFocusSoundRevampToggle = true;
 
-            @Config.RequiresMcRestart
-            @Config.Name("[09] Heal: Cast Sound Revamp")
-            @Config.Comment("Overhauls the heal focus effect cast sound")
-            public boolean utTCHealFocusSoundRevampToggle = true;
+                @Config.RequiresMcRestart
+                @Config.Name("[04] Earth: Impact Sound")
+                @Config.Comment("Adds an impact sound to the earth focus effect")
+                public boolean utTCEarthFocusImpactSoundToggle = true;
 
-            @Config.RequiresMcRestart
-            @Config.Name("[10] Heal: Impact Sound")
-            @Config.Comment("Adds an impact sound to the heal focus effect")
-            public boolean utTCHealFocusImpactSoundToggle = true;
+                @Config.RequiresMcRestart
+                @Config.Name("[05] Fire: Impact Sound")
+                @Config.Comment("Adds an impact sound to the fire focus effect")
+                public boolean utTCFireFocusImpactSoundToggle = true;
 
-            @Config.RequiresMcRestart
-            @Config.Name("[11] Rift: Cast Sound Revamp")
-            @Config.Comment("Overhauls the rift focus effect cast sound")
-            public boolean utTCRiftFocusSoundRevampToggle = true;
+                @Config.RequiresMcRestart
+                @Config.Name("[06] Flux: Impact Sound")
+                @Config.Comment("Adds an impact sound to the flux focus effect")
+                public boolean utTCFluxFocusImpactSoundToggle = true;
 
-            @Config.RequiresMcRestart
-            @Config.Name("[12] Rift: Impact Sound")
-            @Config.Comment("Adds an impact sound to the rift focus effect")
-            public boolean utTCRiftFocusImpactSoundToggle = true;
+                @Config.RequiresMcRestart
+                @Config.Name("[07] Frost: Cast Sound Revamp")
+                @Config.Comment("Overhauls the frost focus effect cast sound to make it a lot less plangent")
+                public boolean utTCFrostFocusSoundRevampToggle = true;
+
+                @Config.RequiresMcRestart
+                @Config.Name("[08] Frost: Impact Sound")
+                @Config.Comment("Adds an impact sound to the frost focus effect")
+                public boolean utTCFrostFocusImpactSoundToggle = true;
+
+                @Config.RequiresMcRestart
+                @Config.Name("[09] Heal: Cast Sound Revamp")
+                @Config.Comment("Overhauls the heal focus effect cast sound")
+                public boolean utTCHealFocusSoundRevampToggle = true;
+
+                @Config.RequiresMcRestart
+                @Config.Name("[10] Heal: Impact Sound")
+                @Config.Comment("Adds an impact sound to the heal focus effect")
+                public boolean utTCHealFocusImpactSoundToggle = true;
+
+                @Config.RequiresMcRestart
+                @Config.Name("[11] Rift: Cast Sound Revamp")
+                @Config.Comment("Overhauls the rift focus effect cast sound")
+                public boolean utTCRiftFocusSoundRevampToggle = true;
+
+                @Config.RequiresMcRestart
+                @Config.Name("[12] Rift: Impact Sound")
+                @Config.Comment("Adds an impact sound to the rift focus effect")
+                public boolean utTCRiftFocusImpactSoundToggle = true;
+            }
         }
 
         public static class FocusMediumsCategory
