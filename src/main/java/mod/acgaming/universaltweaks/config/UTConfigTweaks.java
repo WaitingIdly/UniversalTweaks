@@ -23,7 +23,7 @@ import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThrough
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
 import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
 
-@Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - Tweaks")
+@Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - Tweaks", category = "")
 public class UTConfigTweaks
 {
     @Config.LangKey("cfg.universaltweaks.config.blocks")

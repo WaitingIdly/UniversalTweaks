@@ -10,7 +10,7 @@ import com.cleanroommc.configanytime.ConfigAnytime;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.util.compat.UTObsoleteModsHandler;
 
-@Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - General")
+@Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - General", category = "")
 public class UTConfigGeneral
 {
     @Config.LangKey("cfg.universaltweaks.config.debug")

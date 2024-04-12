@@ -12,7 +12,7 @@ import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 import mod.acgaming.universaltweaks.mods.botania.UTBotaniaFancySkybox;
 
-@Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - Mod Integration")
+@Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - Mod Integration", category = "")
 public class UTConfigMods
 {
     @Config.LangKey("cfg.universaltweaks.modintegration.abyssalcraft")

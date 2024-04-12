@@ -12,7 +12,7 @@ import mod.acgaming.universaltweaks.bugfixes.blocks.blockoverlay.UTBlockOverlayL
 import mod.acgaming.universaltweaks.bugfixes.entities.desync.UTEntityDesync;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
 
-@Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - Bugfixes")
+@Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - Bugfixes", category = "")
 public class UTConfigBugfixes
 {
     @Config.LangKey("cfg.universaltweaks.config.blocks")
