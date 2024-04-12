@@ -15,6 +15,7 @@ public class UTConfigGeneral
 {
     @Config.LangKey("cfg.universaltweaks.config.debug")
     @Config.Name("Debug")
+    @Config.Comment("Controls the debug settings for Universal Tweaks")
     public static final DebugCategory DEBUG = new DebugCategory();
 
     public static class DebugCategory

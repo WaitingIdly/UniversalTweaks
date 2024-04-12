@@ -28,26 +28,32 @@ public class UTConfigTweaks
 {
     @Config.LangKey("cfg.universaltweaks.config.blocks")
     @Config.Name("Blocks")
+    @Config.Comment("Controls the settings for Blocks")
     public static final BlocksCategory BLOCKS = new BlocksCategory();
 
     @Config.LangKey("cfg.universaltweaks.config.entities")
     @Config.Name("Entities")
+    @Config.Comment("Controls the settings for Entities")
     public static final EntitiesCategory ENTITIES = new EntitiesCategory();
 
     @Config.LangKey("cfg.universaltweaks.config.items")
     @Config.Name("Items")
+    @Config.Comment("Controls the settings for Items")
     public static final ItemsCategory ITEMS = new ItemsCategory();
 
     @Config.LangKey("cfg.universaltweaks.config.misc")
     @Config.Name("Misc")
+    @Config.Comment("Controls other settings")
     public static final MiscCategory MISC = new MiscCategory();
 
     @Config.LangKey("cfg.universaltweaks.config.performance")
     @Config.Name("Performance")
+    @Config.Comment("Controls the settings for improving performance")
     public static final PerformanceCategory PERFORMANCE = new PerformanceCategory();
 
     @Config.LangKey("cfg.universaltweaks.config.world")
     @Config.Name("World")
+    @Config.Comment("Controls the settings for World Generation and setting specific value for the World")
     public static final WorldCategory WORLD = new WorldCategory();
 
     public enum EnumLists
@@ -93,26 +99,32 @@ public class UTConfigTweaks
     {
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.betterplacement")
         @Config.Name("Better Placement")
+        @Config.Comment("Controls the settings for removing the delay between placing blocks")
         public final BetterPlacementCategory BETTER_PLACEMENT = new BetterPlacementCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.blockdispenser")
         @Config.Name("Block Dispenser")
+        @Config.Comment("Controls the settings for allowing dispensers to place blocks")
         public final BlockDispenserCategory BLOCK_DISPENSER = new BlockDispenserCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.breakablebedrock")
         @Config.Name("Breakable Bedrock")
+        @Config.Comment("Controls the settings for how bedrock is breakable")
         public final BreakableBedrockCategory BREAKABLE_BEDROCK = new BreakableBedrockCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.finitewater")
         @Config.Name("Finite Water")
+        @Config.Comment("Controls the settings for where infinite water sources can be created")
         public final FiniteWaterCategory FINITE_WATER = new FiniteWaterCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.overhaulbeacon")
         @Config.Name("Overhaul Beacon")
+        @Config.Comment("Controls the settings for the Beacon tweaks")
         public final OverhaulBeaconCategory OVERHAUL_BEACON = new OverhaulBeaconCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.sapling")
         @Config.Name("Sapling Behavior")
+        @Config.Comment("Controls the settings for Sapling growth behavior")
         public final SaplingBehaviorCategory SAPLING_BEHAVIOR = new SaplingBehaviorCategory();
 
         @Config.RequiresMcRestart
@@ -361,62 +373,77 @@ public class UTConfigTweaks
     {
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.attributes")
         @Config.Name("Attributes")
+        @Config.Comment("Controls the settings for maximum/minimum attributes")
         public final AttributesCategory ATTRIBUTES = new AttributesCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.betterburning")
         @Config.Name("Better Burning")
+        @Config.Comment("Controls the settings for improving the burning mechanics")
         public final BetterBurningCategory BETTER_BURNING = new BetterBurningCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.chickenshedding")
         @Config.Name("Chicken Shedding")
+        @Config.Comment("Controls the settings for Chickens shedding feathers")
         public final ChickenSheddingCategory CHICKEN_SHEDDING = new ChickenSheddingCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.cobwebslowness")
         @Config.Name("Cobweb Slowness")
+        @Config.Comment("Controls the settings for how Cobwebs impact slowness")
         public final CobwebSlownessCategory COBWEB_SLOWNESS = new CobwebSlownessCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.collisiondamage")
         @Config.Name("Collision Damage")
+        @Config.Comment("Controls the settings for collision damage due to horizontal movement")
         public final CollisionDamageCategory COLLISION_DAMAGE = new CollisionDamageCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.creeperconfetti")
         @Config.Name("Creeper Confetti")
+        @Config.Comment("Controls the settings for turning Creeper explosions into confetti")
         public final CreeperConfettiCategory CREEPER_CONFETTI = new CreeperConfettiCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.damagevelocity")
         @Config.Name("Damage Velocity")
+        @Config.Comment("Controls the settings for if being damaged impacts movement")
         public final DamageVelocityCategory DAMAGE_VELOCITY = new DamageVelocityCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.easybreeding")
         @Config.Name("Easy Breeding")
+        @Config.Comment("Controls the settings for if animals can be bred via food on the ground")
         public final EasyBreedingCategory EASY_BREEDING = new EasyBreedingCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.nogolems")
         @Config.Name("No Golems")
+        @Config.Comment("Controls the settings for disabling summoning vanilla mobs via structures")
         public final NoGolemsCategory NO_GOLEMS = new NoGolemsCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.playerspeed")
         @Config.Name("Player Speed")
+        @Config.Comment("Controls the settings for the Player's default movement speeds")
         public final PlayerSpeedCategory PLAYER_SPEED = new PlayerSpeedCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.rallyhealth")
         @Config.Name("Rally Health")
+        @Config.Comment("Controls the settings for regain lost health when attacking shortly after being damaged")
         public final RallyHealthCategory RALLY_HEALTH = new RallyHealthCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.sleeping")
         @Config.Name("Sleeping")
+        @Config.Comment("Controls the settings for Sleeping")
         public final SleepingCategory SLEEPING = new SleepingCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.spawncaps")
         @Config.Name("Spawn Caps")
+        @Config.Comment("Controls the settings for Mob Spawning Caps")
         public final SpawnCapsCategory SPAWN_CAPS = new SpawnCapsCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.undeadhorses")
         @Config.Name("Undead Horses")
+        @Config.Comment("Controls the settings for Undead Horses")
         public final UndeadHorsesCategory UNDEAD_HORSES = new UndeadHorsesCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.entities.waterfalldamage")
         @Config.Name("Water Fall Damage")
+        @Config.Comment("Controls the settings for how landing in water impacts fall damage taken")
         public final WaterFallDamageCategory WATER_FALL_DAMAGE = new WaterFallDamageCategory();
 
         @Config.Name("Adaptive XP Drops")
@@ -886,6 +913,7 @@ public class UTConfigTweaks
     {
         @Config.LangKey("cfg.universaltweaks.tweaks.items.attackcooldown")
         @Config.Name("Attack Cooldown")
+        @Config.Comment("Controls the settings for the 1.9 attack cooldown")
         public final AttackCooldownCategory ATTACK_COOLDOWN = new AttackCooldownCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.items.infinity")
@@ -894,14 +922,17 @@ public class UTConfigTweaks
 
         @Config.LangKey("cfg.universaltweaks.tweaks.items.itementities")
         @Config.Name("Item Entities")
+        @Config.Comment("Controls the settings modifying interaction with Item Entities")
         public final ItemEntitiesCategory ITEM_ENTITIES = new ItemEntitiesCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.items.mending")
         @Config.Name("Mending")
+        @Config.Comment("Controls the settings for the Mending enchantment")
         public final MendingCategory MENDING = new MendingCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.items.parry")
         @Config.Name("Shield Parry")
+        @Config.Comment("Controls the settings for how the Shield can block projectiles")
         public final ParryCategory PARRY = new ParryCategory();
 
         @Config.Name("Always Eat")
@@ -1216,6 +1247,7 @@ public class UTConfigTweaks
     {
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.armorcurve")
         @Config.Name("Armor Curve")
+        @Config.Comment("Controls the settings for how armor affects damage taken")
         public final ArmorCurveCategory ARMOR_CURVE = new ArmorCurveCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.chat")
@@ -1224,30 +1256,37 @@ public class UTConfigTweaks
 
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.incurablepotions")
         @Config.Name("Incurable Potions")
+        @Config.Comment("Controls the settings for what Potions are not curable via normal methods")
         public final IncurablePotionsCategory INCURABLE_POTIONS = new IncurablePotionsCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.lightning")
         @Config.Name("Lightning")
+        @Config.Comment("Controls the settings for Lightning")
         public final LightningCategory LIGHTNING = new LightningCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.loadsounds")
         @Config.Name("Load Sounds")
+        @Config.Comment("Controls the settings for what sounds are played on loading the game or server")
         public final LoadSoundsCategory LOAD_SOUNDS = new LoadSoundsCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.pickupnotification")
         @Config.Name("Pickup Notification")
+        @Config.Comment("Controls the settings for notifications presented on picking up items")
         public final PickupNotificationCategory PICKUP_NOTIFICATION = new PickupNotificationCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.smoothscrolling")
         @Config.Name("Smooth Scrolling")
+        @Config.Comment("Controls the settings for smooth scrolling in GUIs")
         public final SmoothScrollingCategory SMOOTH_SCROLLING = new SmoothScrollingCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.stg")
         @Config.Name("Swing Through Grass")
+        @Config.Comment("Controls the settings for allowing for attacking and interacting through grass and similar blocks")
         public final SwingThroughGrassCategory SWING_THROUGH_GRASS = new SwingThroughGrassCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.toastcontrol")
         @Config.Name("Toast Control")
+        @Config.Comment("Controls the settings for Toasts, controlling what ones can appear")
         public final ToastControlCategory TOAST_CONTROL = new ToastControlCategory();
 
         @Config.Name("Accurate Potion Duration")
@@ -1762,6 +1801,7 @@ public class UTConfigTweaks
     {
         @Config.LangKey("cfg.universaltweaks.tweaks.performance.entityradiuscheck")
         @Config.Name("Entity Radius Check")
+        @Config.Comment("Controls the settings for")
         public final EntityRadiusCheckCategory ENTITY_RADIUS_CHECK = new EntityRadiusCheckCategory();
 
         @Config.RequiresMcRestart
@@ -1896,10 +1936,12 @@ public class UTConfigTweaks
     {
         @Config.LangKey("cfg.universaltweaks.tweaks.world.chunkgenlimit")
         @Config.Name("Chunk Gen Limit")
+        @Config.Comment("Controls the settings for the maximum chunk generation per tick")
         public final ChunkGenLimitCategory CHUNK_GEN_LIMIT = new ChunkGenLimitCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.world.dimensionunload")
         @Config.Name("Dimension Unload")
+        @Config.Comment("Controls the settings for unloading unused dimensions")
         public final DimensionUnloadCategory DIMENSION_UNLOAD = new DimensionUnloadCategory();
 
         @Config.RequiresMcRestart

@@ -17,14 +17,17 @@ public class UTConfigMods
 {
     @Config.LangKey("cfg.universaltweaks.modintegration.abyssalcraft")
     @Config.Name("AbyssalCraft")
+    @Config.Comment("Controls the settings for AbyssalCraft")
     public static final AbyssalCraftCategory ABYSSALCRAFT = new AbyssalCraftCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.actuallyadditions")
     @Config.Name("Actually Additions")
+    @Config.Comment("Controls the settings for Actually Additions")
     public static final ActuallyAdditionsCategory ACTUALLY_ADDITIONS = new ActuallyAdditionsCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.arcanearchives")
     @Config.Name("Arcane Archives")
+    @Config.Comment("Controls the settings for Arcane Archives")
     public static final ArcaneArchivesCategory ARCANE_ARCHIVES = new ArcaneArchivesCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.astralsorcery")
@@ -33,122 +36,152 @@ public class UTConfigMods
 
     @Config.LangKey("cfg.universaltweaks.modintegration.aoa")
     @Config.Name("Advent of Ascension")
+    @Config.Comment("Controls the settings for Advent of Ascension")
     public static final AOACategory AOA = new AOACategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.bop")
     @Config.Name("Biomes O' Plenty")
+    @Config.Comment("Controls the settings for Biomes O' Plenty")
     public static final BiomesOPlentyCategory BIOMES_O_PLENTY = new BiomesOPlentyCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.bm")
     @Config.Name("Blood Magic")
+    @Config.Comment("Controls the settings for Blood Magic")
     public static final BloodMagicCategory BLOOD_MAGIC = new BloodMagicCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.botania")
     @Config.Name("Botania")
+    @Config.Comment("Controls the settings for Botania")
     public static final BotaniaCategory BOTANIA = new BotaniaCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.cbmultipart")
     @Config.Name("CB Multipart/Forge Multipart CBE")
+    @Config.Comment("Controls the settings for CB Multipart/Forge Multipart CBE")
     public static final CBMultipartCategory CB_MULTIPART = new CBMultipartCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.chisel")
     @Config.Name("Chisel")
+    @Config.Comment("Controls the settings for Chisel")
     public static final ChiselCategory CHISEL = new ChiselCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.cqrepoured")
     @Config.Name("Chocolate Quest Repoured")
+    @Config.Comment("Controls the settings for Chocolate Quest Repoured")
     public static final ChocolateQuestCategory CHOCOLATE_QUEST = new ChocolateQuestCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.cofhcore")
     @Config.Name("CoFH Core")
+    @Config.Comment("Controls the settings for CoFH Core")
     public static final CoFHCoreCategory COFH_CORE = new CoFHCoreCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.compactmachines")
     @Config.Name("Compact Machines")
+    @Config.Comment("Controls the settings for Compact Machines")
     public static final CompactMachinesCoreCategory COMPACT_MACHINES = new CompactMachinesCoreCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.effortlessbuilding")
     @Config.Name("Effortless Building")
+    @Config.Comment("Controls the settings for Effortless Building")
     public static final EffortlessBuildingCategory EFFORTLESS_BUILDING = new EffortlessBuildingCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.elementarystaffs")
     @Config.Name("Elementary Staffs")
+    @Config.Comment("Controls the settings for Elementary Staffs")
     public static final ElementaryStaffsCategory ELEMENTARY_STAFFS = new ElementaryStaffsCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.elenaidodge2")
     @Config.Name("Elenai Dodge 2")
+    @Config.Comment("Controls the settings for Elenai Dodge 2")
     public static final ElenaiDodge2Category ELENAI_DODGE_2 = new ElenaiDodge2Category();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.esm")
     @Config.Name("Epic Siege Mod")
+    @Config.Comment("Controls the settings for Epic Siege Mod")
     public static final EpicSiegeModCategory EPIC_SIEGE_MOD = new EpicSiegeModCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.erebus")
     @Config.Name("The Erebus")
+    @Config.Comment("Controls the settings for The Erebus")
     public static final ErebusCategory EREBUS = new ErebusCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.extrautilities")
     @Config.Name("Extra Utilities 2")
+    @Config.Comment("Controls the settings for Extra Utilities 2")
     public static final ExtraUtilitiesCategory EXTRA_UTILITIES = new ExtraUtilitiesCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.forestry")
     @Config.Name("Forestry")
+    @Config.Comment("Controls the settings for Forestry")
     public static final ForestryCategory FORESTRY = new ForestryCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.industrialcraft")
     @Config.Name("IndustrialCraft 2")
+    @Config.Comment("Controls the settings for IndustrialCraft 2")
     public static final IndustrialCraftCategory INDUSTRIALCRAFT = new IndustrialCraftCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.industrialforegoing")
     @Config.Name("Industrial Foregoing")
+    @Config.Comment("Controls the settings for Industrial Foregoing")
     public static final IndustrialForegoingCategory INDUSTRIAL_FOREGOING = new IndustrialForegoingCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.infernalmobs")
     @Config.Name("Infernal Mobs")
+    @Config.Comment("Controls the settings for Infernal Mobs")
     public static final InfernalMobsCategory INFERNAL_MOBS = new InfernalMobsCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.ironbackpacks")
     @Config.Name("Iron Backpacks")
+    @Config.Comment("Controls the settings for Iron Backpacks")
     public static final IronBackpacksCategory IRON_BACKPACKS = new IronBackpacksCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.itemstages")
     @Config.Name("Item Stages")
+    @Config.Comment("Controls the settings for Item Stages")
     public static final ItemStagesCategory ITEM_STAGES = new ItemStagesCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.mekanism")
     @Config.Name("Mekanism")
+    @Config.Comment("Controls the settings for Mekanism")
     public static final MekanismCategory MEKANISM = new MekanismCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.mobstages")
     @Config.Name("Mob Stages")
+    @Config.Comment("Controls the settings for Mob Stages")
     public static final MobStagesCategory MOB_STAGES = new MobStagesCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.modularrouters")
     @Config.Name("Modular Routers")
+    @Config.Comment("Controls the settings for Modular Routers")
     public static final ModularRoutersCategory MODULAR_ROUTERS = new ModularRoutersCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.mrtjpcore")
     @Config.Name("MrTJPCore")
+    @Config.Comment("Controls the settings for MrTJPCore")
     public static final MrTJPCoreCategory MRTJPCORE = new MrTJPCoreCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.netherchest")
     @Config.Name("Nether Chest")
+    @Config.Comment("Controls the settings for Nether Chest")
     public static final NetherChestCategory NETHER_CHEST = new NetherChestCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.netherrocks")
     @Config.Name("Netherrocks")
+    @Config.Comment("Controls the settings for Netherrocks")
     public static final NetherrocksCategory NETHERROCKS = new NetherrocksCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.nuclearcraft")
     @Config.Name("NuclearCraft")
+    @Config.Comment("Controls the settings for NuclearCraft")
     public static final NuclearCraftCategory NUCLEARCRAFT = new NuclearCraftCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.projectred")
     @Config.Name("ProjectRed")
+    @Config.Comment("Controls the settings for ProjectRed")
     public static final ProjectRedCategory PROJECTRED = new ProjectRedCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.quark")
     @Config.Name("Quark")
+    @Config.Comment("Controls the settings for Quark")
     public static final QuarkCategory QUARK = new QuarkCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.railcraft")
@@ -157,58 +190,72 @@ public class UTConfigMods
 
     @Config.LangKey("cfg.universaltweaks.modintegration.rftoolsdimensions")
     @Config.Name("RFTools Dimensions")
+    @Config.Comment("Controls the settings for RFTools Dimensions")
     public static final RFToolsDimensionsCategory RFTOOLS_DIMENSIONS = new RFToolsDimensionsCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.roost")
     @Config.Name("Roost")
+    @Config.Comment("Controls the settings for Roost")
     public static final RoostCategory ROOST = new RoostCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.simpledifficulty")
     @Config.Name("Simple Difficulty")
+    @Config.Comment("Controls the settings for Simple Difficulty")
     public static final SimpleDifficultyCategory SIMPLE_DIFFICULTY = new SimpleDifficultyCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.simplyjetpacks")
     @Config.Name("Simply Jetpacks")
+    @Config.Comment("Controls the settings for Simply Jetpacks")
     public static final SimplyJetpacksCategory SIMPLY_JETPACKS = new SimplyJetpacksCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.spiceoflife")
     @Config.Name("Spice Of Life")
+    @Config.Comment("Controls the settings for Spice Of Life")
     public static final SpiceOfLifeCategory SPICE_OF_LIFE = new SpiceOfLifeCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.sd")
     @Config.Name("Storage Drawers")
+    @Config.Comment("Controls the settings for Storage Drawers")
     public static final StorageDrawersCategory STORAGE_DRAWERS = new StorageDrawersCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.tardis")
     @Config.Name("Tardis Mod")
+    @Config.Comment("Controls the settings for Tardis Mod")
     public static final TardisCategory TARDIS = new TardisCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.tr")
     @Config.Name("Tech Reborn")
+    @Config.Comment("Controls the settings for Tech Reborn")
     public static final TechRebornCategory TECH_REBORN = new TechRebornCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.tc")
     @Config.Name("Thaumcraft")
+    @Config.Comment("Controls the settings for Thaumcraft")
     public static final ThaumcraftCategory THAUMCRAFT = new ThaumcraftCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.thaumicwonders")
     @Config.Name("Thaumic Wonders")
+    @Config.Comment("Controls the settings for Thaumic Wonders")
     public static final ThaumicWondersCategory THAUMIC_WONDERS = new ThaumicWondersCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.thefarlanders")
     @Config.Name("The Farlanders")
+    @Config.Comment("Controls the settings for The Farlanders")
     public static final TheFarlandersCategory THE_FARLANDERS = new TheFarlandersCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.te")
     @Config.Name("Thermal Expansion")
+    @Config.Comment("Controls the settings for Thermal Expansion")
     public static final ThermalExpansionCategory THERMAL_EXPANSION = new ThermalExpansionCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.tcon")
     @Config.Name("Tinkers' Construct")
+    @Config.Comment("Controls the settings for Tinkers' Construct")
     public static final TinkersConstructCategory TINKERS_CONSTRUCT = new TinkersConstructCategory();
 
     @Config.LangKey("cfg.universaltweaks.modintegration.tinyprogressions")
     @Config.Name("Tiny Progressions")
+    @Config.Comment("Controls the settings for Tiny Progressions")
     public static final TinyProgressionsCategory TINY_PROGRESSIONS = new TinyProgressionsCategory();
 
     public static class AbyssalCraftCategory
@@ -713,10 +760,12 @@ public class UTConfigMods
 
         @Config.LangKey("cfg.universaltweaks.modintegration.tc.entities")
         @Config.Name("Thaumcraft: Entities")
+        @Config.Comment("Controls the settings for Thaumcraft Entities")
         public final ThaumcraftEntitiesCategory THAUMCRAFT_ENTITIES = new ThaumcraftEntitiesCategory();
 
         @Config.LangKey("cfg.universaltweaks.modintegration.tc.foci")
         @Config.Name("Thaumcraft: Foci")
+        @Config.Comment("Controls the settings for Thaumcraft Foci")
         public final ThaumcraftFociCategory THAUMCRAFT_FOCI = new ThaumcraftFociCategory();
 
         public static class ThaumcraftEntitiesCategory

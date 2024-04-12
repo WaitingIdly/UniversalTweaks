@@ -17,28 +17,34 @@ public class UTConfigBugfixes
 {
     @Config.LangKey("cfg.universaltweaks.config.blocks")
     @Config.Name("Blocks")
+    @Config.Comment("Controls the settings for blocks")
     public static final BlocksCategory BLOCKS = new BlocksCategory();
 
     @Config.LangKey("cfg.universaltweaks.config.entities")
     @Config.Name("Entities")
+    @Config.Comment("Controls the settings for Entities")
     public static final EntitiesCategory ENTITIES = new EntitiesCategory();
 
     @Config.LangKey("cfg.universaltweaks.config.misc")
     @Config.Name("Misc")
+    @Config.Comment("Controls other settings")
     public static final MiscCategory MISC = new MiscCategory();
 
     @Config.LangKey("cfg.universaltweaks.config.world")
     @Config.Name("World")
+    @Config.Comment("Controls the settings for World Generation and Saving")
     public static final WorldCategory WORLD = new WorldCategory();
 
     public static class BlocksCategory
     {
         @Config.LangKey("cfg.universaltweaks.bugfixes.blocks.blockoverlay")
         @Config.Name("Block Overlay")
+        @Config.Comment("Controls the settings for fixing the x-ray effect when standing in non-suffocating blocks")
         public final BlockOverlayCategory BLOCK_OVERLAY = new BlockOverlayCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.blocks.miningglitch")
         @Config.Name("Mining Glitch")
+        @Config.Comment("Controls the settings for fixing ghost blocks")
         public final MiningGlitchCategory MINING_GLITCH = new MiningGlitchCategory();
 
         @Config.RequiresMcRestart
@@ -144,6 +150,7 @@ public class UTConfigBugfixes
     {
         @Config.LangKey("cfg.universaltweaks.bugfixes.entities.desync")
         @Config.Name("Entity Desync")
+        @Config.Comment("Controls the settings for fixing entity motion desyncs")
         public final EntityDesyncCategory ENTITY_DESYNC = new EntityDesyncCategory();
 
         @Config.RequiresMcRestart
@@ -308,6 +315,7 @@ public class UTConfigBugfixes
     {
         @Config.LangKey("cfg.universaltweaks.bugfixes.misc.modelgap")
         @Config.Name("Model Gap")
+        @Config.Comment("Controls the settings for fixing the rendering gap in item and block models")
         public final ModelGapCategory MODEL_GAP = new ModelGapCategory();
 
         @Config.RequiresMcRestart
