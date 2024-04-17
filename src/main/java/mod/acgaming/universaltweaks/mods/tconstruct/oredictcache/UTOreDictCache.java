@@ -21,7 +21,7 @@ import mod.acgaming.universaltweaks.UniversalTweaks;
 // Courtesy of youyihj
 public class UTOreDictCache
 {
-    public static final File cacheFile = new File("config" + File.separator + "tconstruct_oredictcache.dat");
+    public static final File cacheFile = new File("config" + File.separator + UniversalTweaks.MODID + File.separator + "tconstruct_oredictcache.dat");
     public static NBTTagCompound cacheNBT = new NBTTagCompound();
 
     public static void preInit()
