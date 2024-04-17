@@ -917,7 +917,8 @@ public class UTConfigTweaks
         public final AttackCooldownCategory ATTACK_COOLDOWN = new AttackCooldownCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.items.infinity")
-        @Config.Name("Mending")
+        @Config.Name("Infinity")
+        @Config.Comment("Controls the settings for the Infinity enchantment")
         public final InfinityCategory INFINITY = new InfinityCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.items.itementities")
@@ -1252,6 +1253,7 @@ public class UTConfigTweaks
 
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.chat")
         @Config.Name("Chat")
+        @Config.Comment("Controls the settings for the in-game chat")
         public final ChatCategory CHAT = new ChatCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.incurablepotions")
