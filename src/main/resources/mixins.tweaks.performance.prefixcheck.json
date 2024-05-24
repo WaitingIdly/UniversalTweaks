@@ -1,6 +1,6 @@
 {
   "package": "mod.acgaming.universaltweaks.tweaks.performance.prefixcheck.mixin",
-  "refmap": "universaltweaks.refmap.json",
+  "refmap": "mixins.universaltweaks.refmap.json",
   "minVersion": "0.8",
   "compatibilityLevel": "JAVA_8",
   "mixins": ["UTPrefixCheckMixin"]
