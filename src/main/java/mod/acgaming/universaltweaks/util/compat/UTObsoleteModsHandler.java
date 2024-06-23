@@ -9,13 +9,13 @@ import java.util.function.Supplier;
 import com.google.common.collect.ImmutableMap;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.fml.common.Loader;
+import net.minecraftforge.fml.common.ModContainer;
 
 import mod.acgaming.universaltweaks.config.UTConfigBugfixes;
 import mod.acgaming.universaltweaks.config.UTConfigGeneral;
 import mod.acgaming.universaltweaks.config.UTConfigMods;
 import mod.acgaming.universaltweaks.config.UTConfigTweaks;
 import mod.acgaming.universaltweaks.util.UTReflectionUtil;
-import net.minecraftforge.fml.common.ModContainer;
 
 public class UTObsoleteModsHandler
 {
@@ -30,13 +30,15 @@ public class UTObsoleteModsHandler
             put("bedfix", () -> UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime != -1);
             put("bedsaynosleep", () -> UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle);
             put("betterburning", () -> UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBArrowsToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBCookedToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBExtinguishToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBOverlayToggle || UTConfigTweaks.ENTITIES.BETTER_BURNING.utBBSpreadingToggle);
+            put("betterpingdisplay", () -> UTConfigTweaks.MISC.utBetterPing);
             put("betterplacement", () -> UTConfigTweaks.BLOCKS.BETTER_PLACEMENT.utBetterPlacementToggle);
+            put("biggerchathistory", () -> UTConfigTweaks.MISC.CHAT.utChatLines != 100);
             put("biggerpacketsplz", () -> UTConfigBugfixes.MISC.utPacketSize > 0x200000);
             put("blockdispenser", () -> UTConfigTweaks.BLOCKS.BLOCK_DISPENSER.utBlockDispenserToggle);
             put("blockfire", () -> UTConfigBugfixes.ENTITIES.utBlockFireToggle);
             put("blockoverlayfix", () -> UTConfigBugfixes.BLOCKS.BLOCK_OVERLAY.utBlockOverlayToggle);
             put("bottomsugarcanharvest", () -> UTConfigTweaks.BLOCKS.utSugarCaneSize != 3);
-            put("bowinfinityfix", () -> UTConfigTweaks.ITEMS.utBowInfinityToggle);
+            put("bowinfinityfix", () -> UTConfigTweaks.ITEMS.INFINITY.utBowInfinityToggle);
             put("breedablekillerrabbit", () -> UTConfigTweaks.ENTITIES.utRabbitKillerChance > 0.0D);
             put("burnbabyburn", () -> UTConfigTweaks.ENTITIES.utBurningBabyZombiesToggle);
             put("chickensshed", () -> UTConfigTweaks.ENTITIES.CHICKEN_SHEDDING.utChickenSheddingToggle);
@@ -66,6 +68,7 @@ public class UTObsoleteModsHandler
             put("fastleafdecay", () -> UTConfigTweaks.BLOCKS.utLeafDecayToggle);
             put("fencejumper", () -> UTConfigTweaks.BLOCKS.utFenceWallJumpToggle);
             put("finite-fluid-control", () -> UTConfigTweaks.BLOCKS.FINITE_WATER.utFiniteWaterToggle);
+            put("forgivingvoid", () -> UTConfigTweaks.ENTITIES.VOID_TELEPORT.utVoidTeleportToggle);
             put("framevoidpatch", () -> UTConfigBugfixes.BLOCKS.utItemFrameVoidToggle);
             put("getittogetherdrops", () -> UTConfigTweaks.ITEMS.ITEM_ENTITIES.utItemEntitiesToggle);
             put("givemebackmyhp", () -> UTConfigBugfixes.ENTITIES.utMaxHealthToggle);
@@ -75,6 +78,8 @@ public class UTObsoleteModsHandler
             put("horsefallfix", () -> UTConfigBugfixes.ENTITIES.utHorseFallingToggle);
             put("horsestandstill", () -> UTConfigTweaks.ENTITIES.utSaddledWanderingToggle);
             put("ikwid", () -> UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlTutorialToggle);
+            put("infinityworkswithallarrows", () -> UTConfigTweaks.ITEMS.INFINITY.utAllArrowsAreInfinite);
+            put("infwithmend", () -> UTConfigTweaks.ITEMS.INFINITY.utInfinityEnchantmentConflicts);
             put("insomniac", () -> UTConfigTweaks.ENTITIES.SLEEPING.utDisableSleepingToggle);
             put("inventoryspam", () -> UTConfigTweaks.MISC.PICKUP_NOTIFICATION.utPickupNotificationToggle);
             put("keydescfix", () -> UTConfigTweaks.MISC.utPreventKeybindingEntryOverflow);
@@ -108,10 +113,12 @@ public class UTObsoleteModsHandler
             put("preventghost", () -> UTConfigBugfixes.BLOCKS.MINING_GLITCH.utMiningGlitchToggle);
             put("quickleafdecay", () -> UTConfigTweaks.BLOCKS.utLeafDecayToggle);
             put("rallyhealth", () -> UTConfigTweaks.ENTITIES.RALLY_HEALTH.utRallyHealthToggle);
+            put("rebind_narrator", () -> UTConfigTweaks.MISC.utUseCustomNarratorKeybind);
             put("salwayseat", () -> UTConfigTweaks.ITEMS.utAlwaysEatToggle);
             put("savemystronghold", () -> UTConfigTweaks.WORLD.utStrongholdToggle);
             put("sleepsooner", () -> UTConfigTweaks.ENTITIES.SLEEPING.utSleepingTime != -1);
             put("smooth-scrolling-everywhere", () -> UTConfigTweaks.MISC.SMOOTH_SCROLLING.utSmoothScrollingToggle);
+            put("steamworldpatcher", () -> UTConfigMods.STEAMWORLD.utSkyOfOldFixToggle);
             put("stepupfix", () -> UTConfigTweaks.ENTITIES.utAutoJumpToggle);
             put("stg", () -> UTConfigTweaks.MISC.SWING_THROUGH_GRASS.utSwingThroughGrassToggle);
             put("superhot", () -> UTConfigTweaks.ITEMS.utSuperHotTorchToggle);
@@ -122,7 +129,9 @@ public class UTObsoleteModsHandler
             put("toastcontrol", () -> UTConfigTweaks.MISC.TOAST_CONTROL.utToastControlToggle);
             put("tramplestopper", () -> UTConfigTweaks.BLOCKS.utFarmlandTrample != UTConfigTweaks.TrampleOptions.DEFAULT);
             put("unloader", () -> UTConfigTweaks.WORLD.DIMENSION_UNLOAD.utUnloaderToggle);
+            put("unridekeybind", () -> UTConfigTweaks.MISC.utUseSeparateDismountKey);
             put("villagermantlefix", () -> UTConfigBugfixes.ENTITIES.utVillagerMantleToggle);
+            put("voidfog", () -> UTConfigTweaks.WORLD.VOID_FOG.utVoidFogToggle);
             put("watercontrolextreme", () -> UTConfigTweaks.BLOCKS.FINITE_WATER.utFiniteWaterToggle);
         }
     });

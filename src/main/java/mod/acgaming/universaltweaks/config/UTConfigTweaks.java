@@ -2,13 +2,6 @@ package mod.acgaming.universaltweaks.config;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import net.minecraftforge.common.config.Config;
-import net.minecraftforge.common.config.ConfigManager;
-import net.minecraftforge.fml.client.event.ConfigChangedEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
 import com.cleanroommc.configanytime.ConfigAnytime;
 import mod.acgaming.universaltweaks.UniversalTweaks;
 import mod.acgaming.universaltweaks.core.UTLoadingPlugin;
@@ -22,6 +15,11 @@ import mod.acgaming.universaltweaks.tweaks.misc.loadsound.UTLoadSound;
 import mod.acgaming.universaltweaks.tweaks.misc.swingthroughgrass.UTSwingThroughGrassLists;
 import mod.acgaming.universaltweaks.tweaks.performance.autosave.UTAutoSaveOFCompat;
 import mod.acgaming.universaltweaks.tweaks.performance.entityradiuscheck.UTEntityRadiusCheck;
+import net.minecraftforge.common.config.Config;
+import net.minecraftforge.common.config.ConfigManager;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Config(modid = UniversalTweaks.MODID, name = UniversalTweaks.NAME + " - Tweaks")
 public class UTConfigTweaks
@@ -159,6 +157,21 @@ public class UTConfigTweaks
         @Config.Name("Falling Block Lifespan")
         @Config.Comment("Determines how long falling blocks remain in ticks until they are dropped under normal circumstances")
         public int utFallingBlockLifespan = 600;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Improve Barrier Particle Display")
+        @Config.Comment("Causes Barrier Particles to always be displayed to players in Creative mode")
+        public boolean utBarrierParticleDisplay = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Prevent Observer Activating on Placement")
+        @Config.Comment("Controls if the observer activates itself on the first tick when it is placed")
+        public boolean utPreventObserverActivatesOnPlacement = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Render End Portal Bottom")
+        @Config.Comment("Controls if the End Portal renders its texture on the bottom face")
+        public boolean utRenderEndPortalBottom = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Fast Leaf Decay")
@@ -419,6 +432,10 @@ public class UTConfigTweaks
         @Config.Name("Water Fall Damage")
         public final WaterFallDamageCategory WATER_FALL_DAMAGE = new WaterFallDamageCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.entities.voidteleport")
+        @Config.Name("Void Teleport")
+        public final VoidTeleportCategory VOID_TELEPORT = new VoidTeleportCategory();
+
         @Config.Name("Adaptive XP Drops")
         @Config.Comment
             ({
@@ -496,6 +513,16 @@ public class UTConfigTweaks
         public boolean utWitherAIToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Weaken Wither Structure Requirements")
+        @Config.Comment("Allows creating Withers with non-air blocks in the bottom corners of the structure")
+        public boolean utWitherPlacement = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Weaken Golem Structure Requirements")
+        @Config.Comment("Allows creating Iron Golems with non-air blocks in the bottom corners of the structure")
+        public boolean utGolemPlacement = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("First Person Burning Overlay")
         @Config.Comment("Sets the offset for the fire overlay in first person when the player is burning")
         public double utFirstPersonBurningOverlay = -0.3D;
@@ -513,6 +540,11 @@ public class UTConfigTweaks
         @Config.Name("Modern Knockback")
         @Config.Comment("Backports 1.16+ knockback to 1.12: Knockback resistance is now a scale instead of a probability")
         public boolean utModernKnockbackToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Minecart Drops Itself")
+        @Config.Comment("Replaces vanilla Minecarts dropping a Minecart and the contained item, and instead drop the combined item")
+        public boolean utMinecartDropsType = false;
 
         @Config.RequiresMcRestart
         @Config.Name("No Portal Spawning")
@@ -880,6 +912,104 @@ public class UTConfigTweaks
             @Config.Comment("How much fall damage gets reduced by water per tick")
             public double utFallDamageValue = 2.0D;
         }
+
+        public static class VoidTeleportCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[01] Void Teleport Toggle")
+            @Config.Comment("Enables Void Teleport, where falling out below a dimension will teleport you to the top of the dimension")
+            public boolean utVoidTeleportToggle = false;
+
+            @Config.Name("[02] Prevent Void Damage")
+            @Config.Comment
+                ({
+                    "Prevents taking a tick of void damage before being teleported",
+                    "If this is false, entities will take 4 damage every time Void Teleport activates, preventing infinite looping"
+                })
+            public boolean utPreventVoidDamage = true;
+
+            @Config.Name("[03] Target Y-Level")
+            @Config.Comment
+                ({
+                    "Y-level to teleport the entity",
+                    "If the target Y-level is lower than the highest block in that coordinate, will teleport the entity to the highest location instead"
+                })
+            public int utTargetYLevel = 300;
+
+            @Config.Name("[04] Apply Blindness on Teleport")
+            @Config.Comment("Applies the blindness effect for 3 seconds when teleporting")
+            public boolean utTeleportBlindness = true;
+
+            @Config.Name("[05] Clamp Falling Speed")
+            @Config.Comment("Prevents Y motion from being less than this")
+            public double utClampSpeedTo = -1;
+
+            @Config.Name("[06] Fall Distance Height")
+            @Config.Comment
+                ({
+                    "Height to override the fallDistance variable with when landing after having teleported",
+                    "When set to less than 0, [07] Fall Damage Taken applies instead"
+                })
+            public float utFallHeight = -1;
+
+            @Config.Name("[07] Fall Damage Taken")
+            @Config.Comment
+                ({
+                    "Amount of fall damage taken when landing on a block",
+                    "Negative numbers deal damage relative to the entity's max health",
+                    "Only applies if [06] Fall Distance Height is less than 0"
+                })
+            public float utFallDamageTaken = -1;
+
+            @Config.Name("[08] Allow Fall Damage Taken to Kill")
+            @Config.Comment
+                ({
+                    "Sets if [07] Fall Damage Taken can kill entities",
+                    "Does not apply to fall damage taken due to [06] Fall Distance Height"
+                })
+            public boolean utAllowSpecificFallDamageToKill = true;
+
+            @Config.Name("[09] Maximum Times to Teleport Consecutively")
+            @Config.Comment("Maximum number of times to teleport the entity without the entity landing before no longer teleporting. Used to prevent infinite loops")
+            public int utMaxCombo = 100;
+
+            @Config.Name("[10] Apply Void Teleport to Players")
+            @Config.Comment("Controls if players are teleported by Void Teleport")
+            public boolean utForgivePlayers = true;
+
+            @Config.Name("[11] Entity List")
+            @Config.Comment
+                ({
+                    "List of the resource location names for entities concerning Void Teleport",
+                    "Behavior depends on the list mode"
+                })
+            public String[] utEntityList = new String[] {};
+
+            @Config.Name("[12] Entity List Mode")
+            @Config.Comment
+                ({
+                    "Blacklist Mode: Entities that won't be impacted by Void Teleport, others will",
+                    "Whitelist Mode: Entities that will be impacted by Void Teleport, others won't"
+                })
+            public EnumLists utEntityListMode = EnumLists.WHITELIST;
+
+            @Config.Name("[13] Dimension List")
+            @Config.Comment
+                ({
+                    "List of dimensions concerning Void Teleport",
+                    "Behavior depends on the list mode",
+                    "Can be dimension name or ID"
+                })
+            public String[] utDimensionList = new String[] {};
+
+            @Config.Name("[14] Dimension List Mode")
+            @Config.Comment
+                ({
+                    "Blacklist Mode: Dimensions that don't have Void Teleport enabled, others do",
+                    "Whitelist Mode: Dimensions that have Void Teleport enabled, others don't"
+                })
+            public EnumLists utDimensionListMode = EnumLists.BLACKLIST;
+        }
     }
 
     public static class ItemsCategory
@@ -887,6 +1017,10 @@ public class UTConfigTweaks
         @Config.LangKey("cfg.universaltweaks.tweaks.items.attackcooldown")
         @Config.Name("Attack Cooldown")
         public final AttackCooldownCategory ATTACK_COOLDOWN = new AttackCooldownCategory();
+
+        @Config.LangKey("cfg.universaltweaks.tweaks.items.infinity")
+        @Config.Name("Mending")
+        public final InfinityCategory INFINITY = new InfinityCategory();
 
         @Config.LangKey("cfg.universaltweaks.tweaks.items.itementities")
         @Config.Name("Item Entities")
@@ -919,13 +1053,14 @@ public class UTConfigTweaks
         public boolean utHardcoreBucketsToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Prevent Placing Buckets in Portals")
+        @Config.Comment("Prevents placing of liquid source blocks overriding portal blocks")
+        public boolean utPreventBucketPlacingInPortal = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("No Leftover Breath Bottles")
         @Config.Comment("Disables dragon's breath from being a container item and leaving off empty bottles when a stack is brewed with")
         public boolean utLeftoverBreathBottleToggle = true;
-
-        @Config.Name("Bow Infinity")
-        @Config.Comment("Bows enchanted with Infinity no longer require arrows")
-        public boolean utBowInfinityToggle = true;
 
         @Config.Name("Custom Rarity")
         @Config.Comment
@@ -1012,6 +1147,21 @@ public class UTConfigTweaks
             @Config.Name("[3] Hide Attack Speed Tooltip")
             @Config.Comment("Hides attack speed tooltips of weapons")
             public boolean utAttackCooldownTooltips = true;
+        }
+
+        public static class InfinityCategory
+        {
+            @Config.Name("[1] Arrowless Infinity")
+            @Config.Comment("Bows enchanted with Infinity no longer require arrows")
+            public boolean utBowInfinityToggle = true;
+
+            @Config.Name("[2] Infinity Conflict")
+            @Config.Comment("Allows the Infinity Enchantment to be combined with Mending")
+            public boolean utInfinityEnchantmentConflicts = false;
+
+            @Config.Name("[3] Infinity Affects All Arrows")
+            @Config.Comment("Allows the Infinity Enchantment to apply to all arrows (e.g. Tipped Arrows)")
+            public boolean utAllArrowsAreInfinite = false;
         }
 
         public static class ItemEntitiesCategory
@@ -1203,6 +1353,10 @@ public class UTConfigTweaks
         @Config.Name("Armor Curve")
         public final ArmorCurveCategory ARMOR_CURVE = new ArmorCurveCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.misc.chat")
+        @Config.Name("Chat")
+        public final ChatCategory CHAT = new ChatCategory();
+
         @Config.LangKey("cfg.universaltweaks.tweaks.misc.incurablepotions")
         @Config.Name("Incurable Potions")
         public final IncurablePotionsCategory INCURABLE_POTIONS = new IncurablePotionsCategory();
@@ -1236,6 +1390,11 @@ public class UTConfigTweaks
         public boolean utPotionDurationToggle = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Always Return to Main Menu")
+        @Config.Comment("Always returns the player to the main menu when quitting the game")
+        public boolean utReturnToMainMenu = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Copy World Seed")
         @Config.Comment("Enables clicking of `/seed` world seed in chat to copy to clipboard")
         public boolean utCopyWorldSeedToggle = false;
@@ -1259,6 +1418,11 @@ public class UTConfigTweaks
         public boolean utDisableNarratorToggle = false;
 
         @Config.RequiresMcRestart
+        @Config.Name("Disable Text Shadows")
+        @Config.Comment("Disables all text shadowing, where text has a darker version of itself rendered behind the normal text, changing the appearance and can improve fps on some screens")
+        public boolean utDisableTextShadow = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("End Portal Parallax")
         @Config.Comment("Re-implements parallax rendering of the end portal from 1.10 and older")
         public boolean utEndPortalParallaxToggle = true;
@@ -1274,14 +1438,29 @@ public class UTConfigTweaks
         public boolean utLANServerProperties = true;
 
         @Config.RequiresMcRestart
+        @Config.Name("Better Ping Display")
+        @Config.Comment("Displays the ping in milliseconds of players when viewing the server list")
+        public boolean utBetterPing = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Disable Glint Overlay on Potions")
+        @Config.Comment("Disables the glint overlay on potions")
+        public boolean utDisablePotionGlint = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Disable Glint Overlay on Enchantment Books")
+        @Config.Comment("Disables the glint overlay on enchantment books")
+        public boolean utDisableEnchantmentBookGlint = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Disable Hotbar Scroll Wrapping")
+        @Config.Comment("Disables using the scroll wheel to change hotbar slots wrapping")
+        public boolean utDisableHotbarScrollWrapping = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Prevent Keybinds from Overflowing Screen")
         @Config.Comment("Always indent keybind entries from the screen edge, preventing them from overflowing off the left side when particularly long keybind names are present")
         public boolean utPreventKeybindingEntryOverflow = true;
-
-        @Config.RequiresMcRestart
-        @Config.Name("Compact Messages")
-        @Config.Comment("Removes duplicate messages and instead put a number behind the message how often it was repeated")
-        public boolean utCompactMessagesToggle = false;
 
         @Config.RequiresMcRestart
         @Config.Name("Linear XP Amount")
@@ -1309,6 +1488,21 @@ public class UTConfigTweaks
         @Config.Name("No Potion Shift")
         @Config.Comment("Disables the inventory shift when potion effects are active")
         public boolean utPotionShiftToggle = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Hide Personal Effect Particles")
+        @Config.Comment("Disables potion effect particles emitting from yourself")
+        public boolean utPoVEffectParticles = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Particle Limit")
+        @Config.Comment
+            ({
+                "Limits particles to a set amount. Should not be set too low, as it will cause particles to appear for a single tick before vanishing",
+                "Vanilla default is 16384",
+                "Less than or equal to 0 is set to the default"
+            })
+        public int utParticleLimit = -1;
 
         @Config.RequiresMcRestart
         @Config.Name("No Smelting XP")
@@ -1342,7 +1536,7 @@ public class UTConfigTweaks
         @Config.Name("Remove Realms Button")
         @Config.Comment
             ({
-                "Removes the redundant Minecraft Realms button from the main menu",
+                "Removes the redundant Minecraft Realms button from the main menu and silences notifications",
                 "Incompatible with RandomPatches"
             })
         public boolean utRealmsButtonToggle = true;
@@ -1379,6 +1573,16 @@ public class UTConfigTweaks
                 "Identical to the launch parameter `-Dfml.queryResult=confirm`"
             })
         public boolean utSkipRegistryScreenToggle = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Use Separate Dismount Key")
+        @Config.Comment("Makes the dismount keybind separate from LSHIFT, allowing it to be rebound independently")
+        public boolean utUseSeparateDismountKey = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Use Separate Narrator Key")
+        @Config.Comment("Allows using a custom Narrator key, instead of being stuck with CTRL+B")
+        public boolean utUseCustomNarratorKeybind = false;
 
         @Config.Name("Toggle Cheats Button")
         @Config.Comment("Adds a button to the pause menu to toggle cheats")
@@ -1441,6 +1645,30 @@ public class UTConfigTweaks
             @Config.Comment("Enables debug logging for easier config validation")
             public boolean utArmorCurveLogging = false;
         }
+
+        public static class ChatCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Chat Lines")
+            @Config.Comment
+                ({
+                    "Sets the maximum number of chat lines to display",
+                    "100 is the vanilla default",
+                    "0 or less functionally disables the chat"
+                })
+            public int utChatLines = 100;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[2] Keep Sent Messages")
+            @Config.Comment("Don't clear sent message history on leaving the world")
+            public boolean utKeepSentMessageHistory = false;
+
+            @Config.RequiresMcRestart
+            @Config.Name("[3] Compact Messages")
+            @Config.Comment("Removes duplicate messages and instead put a number behind the message how often it was repeated")
+            public boolean utCompactMessagesToggle = false;
+        }
+
 
         public static class IncurablePotionsCategory
         {
@@ -1682,6 +1910,31 @@ public class UTConfigTweaks
             @Config.Name("[5] Disable Tutorial Toasts")
             @Config.Comment("Determines if tutorial toasts are blocked. Blocks useless things like use WASD to move.")
             public boolean utToastControlTutorialToggle = true;
+
+            @Config.Name("[6] Toast Control List")
+            @Config.Comment
+                ({
+                    "List of class names of Toasts to prevent displaying",
+                    "Behavior depends on the list mode",
+                    "Syntax: full class name"
+                })
+            public String[] utToastControlClassList = new String[] {};
+
+            @Config.Name("[7] List Mode")
+            @Config.Comment
+                ({
+                    "Blacklist Mode: Toast classes which can't be added to the queue, others can",
+                    "Whitelist Mode: Toast classes which can be added to the queue, others can't"
+                })
+            public EnumLists utToastControlClassListMode = EnumLists.BLACKLIST;
+
+            @Config.Name("[8] Debug Logging")
+            @Config.Comment("Enables debug logging to log class names of displayed toasts to the log")
+            public boolean utToastNameLogging = false;
+
+            @Config.Name("[9] Clear Toast Keybind")
+            @Config.Comment("Enables a keybind (default: CTRL+0) to clear all active toasts")
+            public boolean utClearToastKeybind = true;
         }
     }
 
@@ -1744,6 +1997,20 @@ public class UTConfigTweaks
                 "May have side effects such as slower chunk generation"
             })
         public boolean utWorldLoadingToggle = false;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Improve Language Switching Speed")
+        @Config.Comment("Improves the speed of switching languages in the Language GUI")
+        public boolean utImproveLanguageSwitchingSpeed = true;
+
+        @Config.RequiresMcRestart
+        @Config.Name("Improve Server Connection Speed")
+        @Config.Comment
+            ({
+                "Improves the speed of connecting to servers by setting the InetAddress host name to the IP in situations",
+                "where it can be represented as the IP address, preventing getHostFromNameService from being to be run"
+            })
+        public boolean utImproveServerConnectionSpeed = true;
 
         @Config.RequiresMcRestart
         @Config.Name("Mute Advancement Errors")
@@ -1815,7 +2082,7 @@ public class UTConfigTweaks
                     "Vanilla ids aren't allowed because they are already included",
                     "Most types should be specified with the vanilla default radius: 2.0"
                 })
-            public String[] utLessCollisionsExtraTargets = new String[]{};
+            public String[] utLessCollisionsExtraTargets = new String[] {};
         }
     }
 
@@ -1829,18 +2096,23 @@ public class UTConfigTweaks
         @Config.Name("Dimension Unload")
         public final DimensionUnloadCategory DIMENSION_UNLOAD = new DimensionUnloadCategory();
 
+        @Config.LangKey("cfg.universaltweaks.tweaks.world.voidfog")
+        @Config.Name("Void Fog")
+        public final VoidFogCategory VOID_FOG = new VoidFogCategory();
+
         @Config.RequiresMcRestart
         @Config.Name("Sea Level")
         @Config.Comment
             ({
                 "Sets the default height of the overworld's sea level",
+                "Supported world types: Default, Biomes O' Plenty",
                 "Vanilla default is 63"
             })
         public int utSeaLevel = 63;
 
         @Config.RequiresMcRestart
-        @Config.Name("Stronghold Replacement")
-        @Config.Comment("Replaces stronghold generation with a safer variant")
+        @Config.Name("Stronghold Enforcement")
+        @Config.Comment("Enforces stronghold generation to generate all blocks, regardless of air")
         public boolean utStrongholdToggle = true;
 
         @Config.Name("Tidy Chunk")
@@ -1894,6 +2166,59 @@ public class UTConfigTweaks
                     "0",
                     "overworld"
                 };
+        }
+
+        public static class VoidFogCategory
+        {
+            @Config.RequiresMcRestart
+            @Config.Name("[1] Void Fog Toggle")
+            @Config.Comment("Re-implements pre-1.8 void fog and void particles")
+            public boolean utVoidFogToggle = false;
+
+            @Config.Name("[2] Dimension List")
+            @Config.Comment
+                ({
+                    "List of dimensions concerning void fog and particles",
+                    "Behavior depends on the list mode",
+                    "Can be dimension name or ID"
+                })
+            public String[] utVoidFogDimensionList = new String[] {"overworld"};
+
+            @Config.Name("[3] Dimension List Mode")
+            @Config.Comment
+                ({
+                    "Blacklist Mode: Dimensions that don't have void fog and particles enabled, others do",
+                    "Whitelist Mode: Dimensions that have void fog and particles enabled, others don't"
+                })
+            public EnumLists utVoidFogDimensionListMode = EnumLists.WHITELIST;
+
+            @Config.Name("[4] Fog In Creative/Spectator")
+            @Config.Comment("Renders void fog in creative and spectator mode")
+            public boolean utVoidFogCreativeSpectator = false;
+
+            @Config.Name("[5] Fog In Superflat")
+            @Config.Comment("Renders void fog in the superflat world type")
+            public boolean utVoidFogSuperflat = false;
+
+            @Config.Name("[6] Fog On Night Vision")
+            @Config.Comment("Renders void fog when the player has night vision")
+            public boolean utVoidFogNightVision = false;
+
+            @Config.Name("[7] Particles In Creative/Spectator")
+            @Config.Comment("Renders void particles in creative and spectator mode")
+            public boolean utVoidParticlesCreativeSpectator = true;
+
+            @Config.Name("[8] Particles In Superflat")
+            @Config.Comment("Renders void particles in the superflat world type")
+            public boolean utVoidParticlesSuperflat = false;
+
+            @Config.Name("[9] Particle Spawn Y Level")
+            @Config.Comment("Determines the maximum Y level of the player at which void particles are spawned")
+            public int utVoidParticleSpawnYLevel = 8;
+
+            @Config.Name("[10] Particle Spawn Iterations")
+            @Config.Comment("Determines the amount of iterations for checking void particle spawns per animate tick")
+            public int utVoidParticleSpawnIterations = 1000;
         }
     }
 
