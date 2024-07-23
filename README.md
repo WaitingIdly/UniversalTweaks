@@ -353,6 +353,8 @@ All changes are toggleable via config files.
     * **Arborist Villager Trades:** Adds custom emerald to germling trades to the arborist villager
 * **HWYLA**
   * **Keybindings Fix:** Fixes crashes in all menus when changing HWYLA keybindings to unsupported values
+* **Immersive Engineering**
+    * **Fix Multiblock Offset NBT:** Fixes multiblocks loading from NBT data sometimes loading with an offset array containing less than 3 entries, which would cause an ArrayIndexOutOfBoundsException
 * **In Control!**
     * **Spawn Rule Stats Fix:** Fixes onJoin spawn rules repeatedly modifying mob attack/health/speed
 * **IndustrialCraft 2**

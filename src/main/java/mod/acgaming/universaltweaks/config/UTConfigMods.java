@@ -119,6 +119,10 @@ public class UTConfigMods
     @Config.Name("Forestry")
     public static final ForestryCategory FORESTRY = new ForestryCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.immersiveengineering")
+    @Config.Name("Immersive Engineering")
+    public static final ImmersiveEngineeringCategory IMMERSIVE_ENGINEERING = new ImmersiveEngineeringCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.incontrol")
     @Config.Name("In Control!")
     public static final InControlCategory INCONTROL = new InControlCategory();
@@ -633,6 +637,14 @@ public class UTConfigMods
         @Config.Name("Spawn Rule Stats Fix")
         @Config.Comment("Fixes onJoin spawn rules repeatedly modifying mob attack/health/speed")
         public boolean utStatsFixToggle = true;
+    }
+
+    public static class ImmersiveEngineeringCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Multiblock Offset NBT")
+        @Config.Comment("Fixes multiblocks loading from NBT data sometimes loading with an offset array containing less than 3 entries, which would cause an ArrayIndexOutOfBoundsException")
+        public boolean utDummyFix = true;
     }
 
     public static class IndustrialCraftCategory
