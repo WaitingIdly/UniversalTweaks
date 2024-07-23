@@ -334,6 +334,8 @@ All changes are toggleable via config files.
     * **Replanting Cocoa Beans:** Allows Forestry farms to automatically replant cocoa beans
 * **HWYLA**
   * **Keybindings Fix:** Fixes crashes in all menus when changing HWYLA keybindings to unsupported values
+* **Immersive Engineering**
+    * **Fix Multiblock Offset NBT:** Fixes multiblocks loading from NBT data sometimes loading with an offset array containing less than 3 entries, which would cause an ArrayIndexOutOfBoundsException
 * **IndustrialCraft 2**
     * **Duplication Fixes:** Fixes various duplication exploits
 * **Industrial Foregoing**

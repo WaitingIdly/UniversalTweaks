@@ -103,6 +103,10 @@ public class UTConfigMods
     @Config.Name("Forestry")
     public static final ForestryCategory FORESTRY = new ForestryCategory();
 
+    @Config.LangKey("cfg.universaltweaks.modintegration.immersiveengineering")
+    @Config.Name("Immersive Engineering")
+    public static final ImmersiveEngineeringCategory IMMERSIVEENGINEERING = new ImmersiveEngineeringCategory();
+
     @Config.LangKey("cfg.universaltweaks.modintegration.industrialcraft")
     @Config.Name("IndustrialCraft 2")
     public static final IndustrialCraftCategory INDUSTRIALCRAFT = new IndustrialCraftCategory();
@@ -542,6 +546,14 @@ public class UTConfigMods
         @Config.Name("Particle Fixes")
         @Config.Comment("Fixes broken textures for various running and landing particles")
         public boolean utParticleFixesToggle = true;
+    }
+
+    public static class ImmersiveEngineeringCategory
+    {
+        @Config.RequiresMcRestart
+        @Config.Name("Fix Multiblock Offset NBT")
+        @Config.Comment("Fixes multiblocks loading from NBT data sometimes loading with an offset array containing less than 3 entries, which would cause an ArrayIndexOutOfBoundsException")
+        public boolean utDummyFix = true;
     }
 
     public static class IndustrialCraftCategory
