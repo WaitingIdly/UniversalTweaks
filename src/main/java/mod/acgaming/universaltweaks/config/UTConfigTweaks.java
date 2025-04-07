@@ -127,6 +127,11 @@ public class UTConfigTweaks
         public final SaplingBehaviorCategory SAPLING_BEHAVIOR = new SaplingBehaviorCategory();
 
         @Config.RequiresMcRestart
+        @Config.Name("Disable Beacon Potion Particles")
+        @Config.Comment("Disable particle effects for potion effects applied by a beacon")
+        public boolean utDisableBeaconPotionParticles = false;
+
+        @Config.RequiresMcRestart
         @Config.Name("Bed Obstruction Replacement")
         @Config.Comment("Replaces bed obstruction checks with an improved version")
         public boolean utBedObstructionToggle = true;

@@ -151,6 +151,7 @@ All changes are toggleable via config files.
 * **Dimension Unload:** Unloads dimensions not in use to free up resources
 * **Disable Advancements:** Prevents the advancement system from loading entirely
 * **Disable Audio Debug:** Improves loading times by removing debug code for missing sounds and subtitles
+* **Disable Beacon Potion Particles:** Disable particle effects for potion effects applied by a beacon
 * **Disable Creeper Music Discs:** Disables creepers dropping music discs when slain by skeletons
 * **Disable Fancy Missing Model:** Improves rendering performance by removing the resource location text on missing models
 * **Disable Hotbar Scroll Wrapping:** Disables using the scroll wheel to change hotbar slots wrapping
