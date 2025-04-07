@@ -380,6 +380,7 @@ All changes are toggleable via config files.
     * **Correct FPS Display:** Fixes incorrect FPS number being displayed on the HUD
 * **HWYLA**
     * **Keybindings Fix:** Fixes crashes in all menus when changing HWYLA keybindings to unsupported values
+* **Immersive Engineering**
 * **In Control!**
     * **Spawn Rule Stats Fix:** Fixes onJoin spawn rules repeatedly modifying mob attack/health/speed
 * **IndustrialCraft 2**
