@@ -84,6 +84,7 @@ public class UTLoadingPlugin implements IFMLLoadingPlugin, IEarlyMixinLoader
             put("mixins.tweaks.blocks.barrier.json", () -> UTConfigTweaks.BLOCKS.utBarrierParticleDisplay);
             put("mixins.tweaks.blocks.bedobstruction.json", () -> UTConfigTweaks.BLOCKS.utBedObstructionToggle);
             put("mixins.tweaks.blocks.breakablebedrock.json", () -> UTConfigTweaks.BLOCKS.BREAKABLE_BEDROCK.utBreakableBedrockToggle);
+            put("mixins.tweaks.blocks.cake.json", () -> UTConfigTweaks.BLOCKS.utDropUneatenCake);
             put("mixins.tweaks.blocks.enchantmenttable.json", () -> UTConfigTweaks.BLOCKS.utEnchantmentTableObstructionToggle);
             put("mixins.tweaks.blocks.endcrystal.json", () -> UTConfigTweaks.BLOCKS.utEndCrystalAnywherePlacing);
             put("mixins.tweaks.blocks.endportal.json", () -> UTConfigTweaks.BLOCKS.utRenderEndPortalBottom);

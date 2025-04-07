@@ -135,6 +135,11 @@ public class UTConfigTweaks
         @Config.Comment("Prevents breaking lower parts of sugar cane and cacti as well as unripe crops, unless sneaking")
         public boolean utBetterHarvestToggle = false;
 
+        @Config.RequiresMcRestart
+        @Config.Name("Drop Uneaten Cake")
+        @Config.Comment("Drop the cake item when no bites have been taken")
+        public boolean utDropUneatenCake = false;
+
         @Config.Name("Farmland Trample")
         @Config.Comment
             ({

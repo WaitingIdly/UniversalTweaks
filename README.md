@@ -165,6 +165,7 @@ All changes are toggleable via config files.
 * **Disable Villager Trade Leveling:** Disables leveling of villager careers, only allowing base level trades
 * **Disable Villager Trade Restock:** Disables restocking of villager trades, only allowing one trade per offer
 * **Disable Wither Targeting AI:** Disables withers targeting animals
+* **Drop Uneaten Cake:** Drop the cake item when no bites have been taken
 * **Easy Breeding:** Enables easy breeding of animals by tossing food on the ground
 * **End Crystal Placing:** Allows placing End Crystals without requiring Obsidian or Bedrock below
 * **End Portal Parallax:** Re-implements parallax rendering of the end portal from 1.11 and older
